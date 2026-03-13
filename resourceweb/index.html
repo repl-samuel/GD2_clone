@@ -6,60 +6,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEMORY FOAM</title>
     <link rel="stylesheet" href="./website.css">
-    <!-- <style>
-    @font-face {
-  font-family: Rubik; /* set name */
-  src: url(https://fonts.google.com/specimen/Rubik?query=rubik); /* url of the font */
-  font-weight: bold;
-
-}
-* {
-   font-family: Rubik;/* use font */
-}</style> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
-    <h1>
-        <strong>MEMORY FOAM</strong>
-    </h1>
-    <h2>
-        The Lasting Effects Of The World
-    </h2>
-    <p>
 
-    </p>
-    <div class="image-container">
-        <img src="./images/Untitled-1-04.png" style="max-width: 40%;" alt="light">
-        <img src="./images/Untitled-1-05.png" style="max-width: 40%;" alt="medium">
-        <img src="./images/Untitled-1-06.png" style="max-width: 40%;" alt="heavy">
-    </div>
+    <!-- Fixed Banner -->
+    <header class="banner">
+        <div class="banner-top">
+            <div class="banner-title">
+                <h1><strong>MEMORY FOAM</strong></h1>
+                <h2>The Lasting Effects Of The World</h2>
+            </div>
+            <div class="banner-images">
+                <img src="./images/Untitled-1-04.png" alt="light">
+                <img src="./images/Untitled-1-05.png" alt="medium">
+                <img src="./images/Untitled-1-06.png" alt="heavy">
+            </div>
+        </div>
+        <nav class="banner-nav">
+            <button class="nav-btn" data-target="#overview">Overview</button>
+        </nav>
+    </header>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <!-- Page Content -->
+    <main class="content">
 
-    <div class="row">
-        <div class="column">
-            <img src="images/darwins finches.jpg">
-            <img src="images/Screenshot 2026-02-27 013555.png">
-            <img src="images/hurricane katrina.png">
-            <img src="images/fire.png">
-        </div>
-        <div class="column">
-            <img src="images/hurricane katrina.png">
-            <img src="images/darwins finches.jpg">
-            <img src="images/fire.png">
-            <img src="images/Screenshot 2026-02-27 013555.png">
-        </div>
-        <div class="column">
-            <img src="images/Screenshot 2026-02-27 013555.png">
-            <img src="images/fire.png">
-            <img src="images/darwins finches.jpg">
-            <img src="images/hurricane katrina.png">
-        </div>
-    </div>
+        <section id="overview">
+            <h3>Overview</h3>
+            <div class="overview-sections">
+                <img src="images/overview/section-1.png" alt="Section 1" class="section-link" data-target="#gallery">
+                <img src="images/overview/section-2.png" alt="Section 2" class="section-link" data-target="#about">
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h3>Gallery</h3>
+            <div class="row">
+                <div class="column">
+                    <img src="images/darwins finches.jpg" alt="Darwin's Finches">
+                    <img src="images/Screenshot 2026-02-27 013555.png" alt="Screenshot">
+                    <img src="images/hurricane katrina.png" alt="Hurricane Katrina">
+                    <img src="images/fire.png" alt="Fire">
+                </div>
+                <div class="column">
+                    <img src="images/hurricane katrina.png" alt="Hurricane Katrina">
+                    <img src="images/darwins finches.jpg" alt="Darwin's Finches">
+                    <img src="images/fire.png" alt="Fire">
+                    <img src="images/Screenshot 2026-02-27 013555.png" alt="Screenshot">
+                </div>
+                <div class="column">
+                    <img src="images/Screenshot 2026-02-27 013555.png" alt="Screenshot">
+                    <img src="images/fire.png" alt="Fire">
+                    <img src="images/darwins finches.jpg" alt="Darwin's Finches">
+                    <img src="images/hurricane katrina.png" alt="Hurricane Katrina">
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h3>About</h3>
+            <p class="about-text">
+                Memory Foam explores the lasting impressions left on our world by natural and human-driven events.
+                Like memory foam that retains the shape of pressure applied to it, our environment bears the marks
+                of every force it encounters — from evolutionary adaptation to catastrophic disaster.
+            </p>
+        </section>
+
+    </main>
+
+    <script>
+        $(document).ready(function () {
+
+            // Keep content below the fixed banner
+            function updateContentPadding() {
+                var bannerHeight = $('.banner').outerHeight();
+                $('.content').css('padding-top', bannerHeight + 'px');
+            }
+
+            updateContentPadding();
+            $(window).on('resize', updateContentPadding);
+
+            // Smooth scroll to section on nav button click
+            $('.nav-btn').on('click', function () {
+                var target = $(this).data('target');
+                var bannerHeight = $('.banner').outerHeight();
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - bannerHeight
+                }, 600);
+            });
+
+            // Smooth scroll on overview section image click
+            $('.section-link').on('click', function () {
+                var target = $(this).data('target');
+                var bannerHeight = $('.banner').outerHeight();
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - bannerHeight
+                }, 600);
+            });
+
+        });
+    </script>
 
 </body>
 
