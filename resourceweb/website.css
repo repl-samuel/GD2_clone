@@ -130,6 +130,33 @@ section h3 {
     max-width: 550px;
 }
 
+.detail-link {
+    cursor: pointer;
+}
+
+/* ---- DETAIL PAGE ---- */
+
+.detail-layout {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    padding: 48px 32px;
+}
+
+.detail-image {
+    flex: 1;
+}
+
+.detail-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.detail-info {
+    flex: 1;
+}
+
 /* ---- ABOUT ---- */
 
 .about-text {

@@ -31,6 +31,7 @@
             <h3>Overview</h3>
             <div class="overview-sections">
                 <img src="images/overview/section-1.png" alt="Section 1" class="section-link" data-target="#gallery">
+                <img src="images/overview/section-3.png" alt="Section 3" class="section-link" data-target="#desire-lines">
                 <img src="images/overview/section-2.png" alt="Section 2" class="section-link" data-target="#about">
             </div>
         </section>
@@ -39,22 +40,37 @@
             <h3>Gallery</h3>
             <div class="row">
                 <div class="column">
-                    <img src="images/darwins finches.jpg" alt="Darwin's Finches">
-                    <img src="images/Screenshot 2026-02-27 013555.png" alt="Screenshot">
-                    <img src="images/hurricane katrina.png" alt="Hurricane Katrina">
-                    <img src="images/fire.png" alt="Fire">
+                    <img src="images/darwins finches.jpg" alt="Darwin's Finches" class="detail-link">
+                    <img src="images/Screenshot 2026-02-27 013555.png" alt="Screenshot" class="detail-link">
+                    <img src="images/hurricane katrina.png" alt="Hurricane Katrina" class="detail-link">
+                    <img src="images/fire.png" alt="Fire" class="detail-link">
                 </div>
                 <div class="column">
-                    <img src="images/hurricane katrina.png" alt="Hurricane Katrina">
-                    <img src="images/darwins finches.jpg" alt="Darwin's Finches">
-                    <img src="images/fire.png" alt="Fire">
-                    <img src="images/Screenshot 2026-02-27 013555.png" alt="Screenshot">
+                    <img src="images/hurricane katrina.png" alt="Hurricane Katrina" class="detail-link">
+                    <img src="images/darwins finches.jpg" alt="Darwin's Finches" class="detail-link">
+                    <img src="images/fire.png" alt="Fire" class="detail-link">
+                    <img src="images/Screenshot 2026-02-27 013555.png" alt="Screenshot" class="detail-link">
                 </div>
                 <div class="column">
-                    <img src="images/Screenshot 2026-02-27 013555.png" alt="Screenshot">
-                    <img src="images/fire.png" alt="Fire">
-                    <img src="images/darwins finches.jpg" alt="Darwin's Finches">
-                    <img src="images/hurricane katrina.png" alt="Hurricane Katrina">
+                    <img src="images/Screenshot 2026-02-27 013555.png" alt="Screenshot" class="detail-link">
+                    <img src="images/fire.png" alt="Fire" class="detail-link">
+                    <img src="images/darwins finches.jpg" alt="Darwin's Finches" class="detail-link">
+                    <img src="images/hurricane katrina.png" alt="Hurricane Katrina" class="detail-link">
+                </div>
+            </div>
+        </section>
+
+        <section id="desire-lines">
+            <h3>Desire Lines</h3>
+            <div class="row">
+                <div class="column">
+                    <img src="images/desire-line-1.jpg" alt="Diagonal path through grass" class="detail-link">
+                </div>
+                <div class="column">
+                    <img src="images/desire-line-2.jpg" alt="Corner shortcut across paving" class="detail-link">
+                </div>
+                <div class="column">
+                    <img src="images/desire-line-3.jpg" alt="Branching paths in a park" class="detail-link">
                 </div>
             </div>
         </section>
@@ -89,6 +105,12 @@
                 $('html, body').animate({
                     scrollTop: $(target).offset().top - bannerHeight
                 }, 600);
+            });
+
+            // Navigate to detail page on gallery/desire-lines image click
+            $('.detail-link').on('click', function () {
+                var imgSrc = $(this).attr('src');
+                window.location.href = 'detail.html?img=' + encodeURIComponent(imgSrc);
             });
 
             // Smooth scroll on overview section image click
