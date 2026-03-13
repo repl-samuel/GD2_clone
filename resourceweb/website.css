@@ -136,15 +136,42 @@ section h3 {
 
 /* ---- DETAIL PAGE ---- */
 
+.detail-banner-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.detail-subtitle {
+    color: rgb(84, 96, 70);
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detail-section-name {
+    color: rgb(84, 96, 70);
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
 .detail-layout {
     display: flex;
-    gap: 48px;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     padding: 48px 32px;
+    gap: 32px;
 }
 
 .detail-image {
-    flex: 1;
+    width: 55%;
 }
 
 .detail-image img {
@@ -153,8 +180,13 @@ section h3 {
     display: block;
 }
 
-.detail-info {
-    flex: 1;
+.detail-desc {
+    color: rgb(47, 57, 35);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8;
+    width: 100%;
+    margin: 0;
 }
 
 /* ---- ABOUT ---- */

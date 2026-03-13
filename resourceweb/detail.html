@@ -26,40 +26,44 @@
         <div class="detail-image">
             <img id="detail-img" src="" alt="">
         </div>
-        <div class="detail-info">
-            <h3 id="detail-title"></h3>
-            <p class="about-text" id="detail-desc"></p>
-        </div>
+        <p class="detail-desc" id="detail-desc"></p>
     </main>
 
     <script>
         const descriptions = {
             'images/darwins finches.jpg': {
                 title: "Darwin's Finches",
+                section: 'GALLERY',
                 desc: "Darwin's finches are a group of about 18 bird species found on the Galápagos Islands. Their remarkable variation in beak shape — each adapted to a different food source — provided Charles Darwin with key evidence for natural selection. The lasting impression of environmental pressure, written into the very anatomy of a species."
             },
             'images/hurricane katrina.png': {
                 title: "Hurricane Katrina",
+                section: 'GALLERY',
                 desc: "Hurricane Katrina struck the Gulf Coast of the United States in August 2005, becoming one of the deadliest and most destructive Atlantic hurricanes on record. The storm's surge reshaped coastlines, displaced communities, and left permanent marks on the urban and natural landscape of New Orleans and surrounding regions."
             },
             'images/fire.png': {
                 title: "Fire",
+                section: 'GALLERY',
                 desc: "Wildfire is both a destroyer and a renewer. Burning through ecosystems with indiscriminate force, fire clears the old and creates space for new growth. Yet the scars it leaves — charred earth, altered soil chemistry, reshaped habitats — persist long after the flames have passed, imprinting the land with a record of what once burned."
             },
             'images/Screenshot 2026-02-27 013555.png': {
                 title: "Landscape Record",
+                section: 'GALLERY',
                 desc: "Aerial and satellite imagery captures the accumulated imprint of human and natural activity on the land. Roads, field boundaries, drainage channels and settlement patterns visible from above tell the story of forces — economic, ecological, geological — that have shaped the terrain over centuries."
             },
             'images/desire-line-1.jpg': {
                 title: "The Shortcut",
+                section: 'DESIRE LINES',
                 desc: "A desire line worn diagonally across a grass field reveals the tension between planned routes and human instinct. Where official paths demand detours, footfall finds the most direct connection. Over time, the repeated pressure of passage strips the grass bare, making visible the invisible logic of movement."
             },
             'images/desire-line-2.jpg': {
                 title: "Corner Cut",
+                section: 'DESIRE LINES',
                 desc: "Across paved surfaces, desire lines appear as worn strips cutting through planned grid patterns. The corner shortcut is perhaps the most universal — where a right-angle path forces an unnecessary deviation, pedestrians collectively assert a straight line, their accumulated steps gradually eroding the surface into a new informal route."
             },
             'images/desire-line-3.jpg': {
                 title: "Branching Paths",
+                section: 'DESIRE LINES',
                 desc: "Where a single route fragments into multiple destinations, desire lines branch and fork like the tributaries of a river. Each branch represents a different collective decision — a different destination, a different preference. The resulting network is a map of desire itself, drawn not by planners but by the repeated choices of many individuals."
             }
         };
@@ -71,9 +75,8 @@
             const data = descriptions[imgSrc];
             document.getElementById('detail-img').src = imgSrc;
             document.getElementById('detail-img').alt = data.title;
-            document.getElementById('detail-title').textContent = data.title;
             document.getElementById('detail-desc').textContent = data.desc;
-            document.title = data.title + ' — MEMORY FOAM';
+document.title = data.title + ' — MEMORY FOAM';
         }
     </script>
 
